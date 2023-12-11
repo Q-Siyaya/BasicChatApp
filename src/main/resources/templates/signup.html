@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +13,12 @@
         <img src="/assets/img/chat_img.jpg" alt="Geeks Chat App Logo" width="50">
         <h2>Geeks Chat App</h2>
     </div>
-    <form action="#" method="post">
-        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="password" id="password" name="password" placeholder="Password" required>
-        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+    <form th:action="@{/createUser}" th:method="post" th:object="geeks">
+        <input th:field="*{firstName}"  placeholder="First Name" required>
+        <input th:field="*{lastName}"  placeholder="Last Name" required>
+        <input th:field="*{email}" placeholder="Email" required>
+        <input th:field="{password}" placeholder="Password" required>
+        <input th:filed="*{passwordConfirm}"  placeholder="Confirm Password" required>
         <button type="submit">Sign Up</button>
     </form>
 </div>

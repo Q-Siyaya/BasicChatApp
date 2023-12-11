@@ -1,5 +1,6 @@
 package com.chatapp.controller;
 
+import com.chatapp.model.Geeks;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,12 @@ public class HomeController {
     @GetMapping("/getSignUpPage")
     public ModelAndView getSignUpPage()
     {
-        return new ModelAndView("signup");
+        Geeks geeks=new Geeks();
+
+        ModelAndView modelAndView=new ModelAndView();
+        modelAndView.addObject("geeks",geeks);
+        modelAndView.setViewName("signup");
+
+        return modelAndView;
     }
 }

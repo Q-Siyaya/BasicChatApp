@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>geeksChatApp</title>
@@ -20,7 +20,7 @@
     <button type="submit">Sign In</button>
     <div class="advertising">
         <!-- Insert your advertising text here -->
-        <p>Difficult to communicate with your peers? <a href="/getSignUpPage">Sign Up</a> to our chat app</p>
+        <p>Difficult to communicate with your peers? <a th:href="@{/getSignUpPage}">Sign Up</a> to our chat app</p>
     </div>
 </div>
 </body>
