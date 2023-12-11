@@ -12,7 +12,7 @@
         <img src="/assets/img/chat_img.jpg" alt="Chat App Logo" width="100">
     </div>
     <div class="form-group">
-        <form>
+        <form th:action="@{/getChatPage}" method="POST">
             <input type="text" placeholder="User-mail(e.g example@gmail.)" id="username">
             <input type="password" placeholder="Password" id="password">
 
