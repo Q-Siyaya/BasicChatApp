@@ -2,12 +2,12 @@ package com.chatapp.model;
 
 import com.chatapp.annotation.FieldsValueMatch;
 import com.chatapp.annotation.PassWorldValidator;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 
 @Getter
@@ -24,6 +24,10 @@ import lombok.*;
 )
 public class Geeks extends BaseEntity
 {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    private int geekId;
 
     @NotBlank(message = "Cannot leave first name empty")
     @Pattern(regexp = "[a-zA-Z]",message = "Name can be only be alphabetic characters")
