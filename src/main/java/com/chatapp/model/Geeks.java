@@ -26,6 +26,7 @@ public class Geeks
     private String chatStatus;
 
     @Email(message = "Please enter valid email")
+    @NotBlank(message = "Email cannot be blank")
     private String email;
 
 
