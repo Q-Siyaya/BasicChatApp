@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class PasswordStrengthValidator implements ConstraintValidator<PassWorldValidator,String>
 {
-    String regexPattern;
+    private String regexPattern;
     @Override
     public void initialize(PassWorldValidator constraintAnnotation) {
         regexPattern="^(?=(.*[a-z]){2})(?=(.*[A-Z]){2})(?=(.*\\d)" +
@@ -20,6 +20,6 @@ public class PasswordStrengthValidator implements ConstraintValidator<PassWorldV
     public boolean isValid(String passwordFeild, ConstraintValidatorContext constraintValidatorContext) {
         passwordFeild=passwordFeild.trim();
 
-        return passwordFeild !=null && passwordFeild.matches(regexPattern);
+        return passwordFeild.matches(regexPattern);
     }
 }

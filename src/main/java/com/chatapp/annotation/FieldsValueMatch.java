@@ -27,6 +27,6 @@ public @interface FieldsValueMatch {
     @Target({ ElementType.TYPE })
     @Retention(RetentionPolicy.RUNTIME)
     @interface List {
-        FieldsValueMatch[] value();
+        FieldsValueMatch value();
     }
 }
