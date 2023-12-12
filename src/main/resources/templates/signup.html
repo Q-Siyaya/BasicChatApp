@@ -13,7 +13,7 @@
         <img src="/assets/img/chat_img.jpg" alt="Geeks Chat App Logo" width="50">
         <h2>Geeks Chat App</h2>
     </div>
-    <form th:action="@{/createUser}" method="post" th:object="${geeks}">
+    <form th:action="@{/createGeek}" method="post" th:object="${geek}">
         <input th:field="*{firstName}"  placeholder="First Name" required>
         <input th:field="*{lastName}"  placeholder="Last Name" required>
         <input th:field="*{email}" placeholder="Email" required>

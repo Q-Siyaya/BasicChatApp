@@ -21,7 +21,7 @@ import java.util.List;
         fieldMatch = "passwordConfirm",
         message = "Password do not match"
 )
-public class Geeks extends BaseEntity
+public class Geek extends BaseEntity
 {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
