@@ -25,7 +25,7 @@ public class Geek extends BaseEntity
 {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
+    @GenericGenerator(name = "native")
     private int geekId;
 
     @NotBlank(message = "Cannot leave first name empty")
@@ -50,10 +50,11 @@ public class Geek extends BaseEntity
     @NotBlank(message = "Please confirm your password")
     @PassWorldValidator(message = "Password should 8 min chan consist of atleat 2, numbers, uppercase letter" +
             ", lowercase letter and special characters")
+    @Transient
     private String passwordConfirm;
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = Message.class)
-    @JoinColumn(name = "Message_FK",referencedColumnName = "messageId",nullable = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "message_fk", referencedColumnName = "geekId", nullable = true)
     private List<Message> messages;
 
 

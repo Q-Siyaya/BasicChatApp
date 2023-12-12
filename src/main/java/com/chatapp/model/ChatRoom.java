@@ -18,12 +18,12 @@ public class ChatRoom extends BaseEntity
 
     @OneToMany(fetch = FetchType.EAGER,targetEntity = Geek.class,cascade = {CascadeType.PERSIST,
     CascadeType.REFRESH})
-    @JoinColumn(name = "Geek_FK",referencedColumnName = "geekId",nullable = true)
+    @JoinColumn(name = "geek_fk",referencedColumnName = "chatRomId",nullable = true)
     private List<Geek> geeks;
 
 
     @OneToMany(fetch = FetchType.EAGER,targetEntity = Message.class,cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "messageId")
+    @JoinColumn(name = "message_fk",referencedColumnName = "chatRomId")
     List<Message> messages;
 
 

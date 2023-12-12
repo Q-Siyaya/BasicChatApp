@@ -4,7 +4,6 @@ import com.chatapp.annotation.PassWorldValidator;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
-import java.util.regex.Pattern;
 
 public class PasswordStrengthValidator implements ConstraintValidator<PassWorldValidator,String>
 {

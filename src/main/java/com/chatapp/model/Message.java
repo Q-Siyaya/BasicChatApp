@@ -12,7 +12,6 @@ public class Message extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
     @GenericGenerator(name = "native")
-    @Column(name = "Message_ID")
     private int messageId;
 
     private String messageText;

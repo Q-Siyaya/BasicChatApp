@@ -15,7 +15,7 @@
     </div>
     <div>
         <ul>
-            <li class="list-error" th:each="error : ${#feilds.errors('geek.*')}"></li>
+            <li class="list-error" th:each="error : ${#fields.errors('geek.*')}" th:text="${error}"></li>
         </ul>
     </div>
     <form th:action="@{/createGeek}" method="post" th:object="${geek}">
