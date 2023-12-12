@@ -32,9 +32,9 @@ public class PublicController
 
         if(isSaved)
         {
-            return "redirect:/home";
+            return "redirect:/login?register=true";
         }
 
-        return " ";
+        return "signup.html";
     }
 }

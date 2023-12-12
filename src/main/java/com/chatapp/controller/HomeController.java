@@ -1,6 +1,6 @@
 package com.chatapp.controller;
 
-import com.chatapp.model.Geek;
+
 import com.chatapp.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
