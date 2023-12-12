@@ -23,7 +23,7 @@ public class PublicController
     @PostMapping(value = "/createGeek")
     public String createGeek(@Valid @ModelAttribute(name = "geek")Geek geek, Errors errors)
     {
-        if(errors !=null)
+        if(errors.hasErrors())
         {
             return "signup.html";
         }

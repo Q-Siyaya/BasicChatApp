@@ -13,6 +13,11 @@
         <img src="/assets/img/chat_img.jpg" alt="Geeks Chat App Logo" width="50">
         <h2>Geeks Chat App</h2>
     </div>
+    <div>
+        <ul>
+            <li class="list-error" th:each="error : ${#feilds.errors('geek.*')}"></li>
+        </ul>
+    </div>
     <form th:action="@{/createGeek}" method="post" th:object="${geek}">
         <input th:field="*{firstName}"  placeholder="First Name" required>
         <input th:field="*{lastName}"  placeholder="Last Name" required>

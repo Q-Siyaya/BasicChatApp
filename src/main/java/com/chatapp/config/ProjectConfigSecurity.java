@@ -28,7 +28,7 @@ public class ProjectConfigSecurity {
                         loginConfigurer.defaultSuccessUrl("/getChatPage").failureUrl("/login?error=true")
                                 .permitAll())
                 .logout(logoutConfigurrer -> {
-                    logoutConfigurrer.logoutSuccessUrl("/login?error=true")
+                    logoutConfigurrer.logoutSuccessUrl("/login?logout=true")
                             .invalidateHttpSession(true)
                             .permitAll();
                 }).formLogin(Customizer.withDefaults());
