@@ -9,12 +9,11 @@ import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.List;
+
 
 @Getter
 @Setter
-@NoArgsConstructor
-@RequiredArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "Geek")
 @FieldsValueMatch(
@@ -52,6 +51,10 @@ public class Geeks extends BaseEntity
     @PassWorldValidator(message = "Password should 8 min chan consist of atleat 2, numbers, uppercase letter" +
             ", lowercase letter and special characters")
     private String passwordConfirm;
+
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,targetEntity = Message.class)
+    @JoinColumn(name = "Message_FK",referencedColumnName = "messageId",nullable = true)
+    private List<Message> messages;
 
 
 }
