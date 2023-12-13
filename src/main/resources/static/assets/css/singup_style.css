@@ -47,3 +47,11 @@
       button:hover {
         background-color: #45a049;
       }
+
+      .list-error
+      {
+        list-style-type:none;
+        font-size: small;
+        color: red;
+        text-align:left;
+      }

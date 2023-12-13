@@ -29,12 +29,10 @@ public class Geek extends BaseEntity
     private int geekId;
 
     @NotBlank(message = "Cannot leave first name empty")
-    @Pattern(regexp = "[a-zA-Z]",message = "Name can be only be alphabetic characters")
     private String firstName;
 
 
     @NotBlank(message = "Cannot leave Last name empty")
-    @Pattern(regexp = "[a-zA-Z]",message = "Name can be only be alphabetic characters")
     private String lastName;
 
 
