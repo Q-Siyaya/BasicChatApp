@@ -10,15 +10,14 @@ public class PasswordStrengthValidator implements ConstraintValidator<PassWorldV
     private String regexPattern;
     @Override
     public void initialize(PassWorldValidator constraintAnnotation) {
-        regexPattern="^(?=(.*[a-z]){2})(?=(.*[A-Z]){2})(?=(.*\\d)" +
-                "{2})(?=(.*[!@#$%^&*()-_+=<>?" +
-                "/{}|~]){2})[^\\s]{8,}$\n";
+        regexPattern = "^(?=(.*[a-z]){2})(?=(.*[A-Z]){2})(?=(.*\\d){2})(?=(.*[!@#$%^&*()-_+=<>?/{}|~]){2})[^\\s]{8,}$";
     }
+
 
     @Override
     public boolean isValid(String passwordFeild, ConstraintValidatorContext constraintValidatorContext) {
-        passwordFeild=passwordFeild.trim();
 
-        return passwordFeild.matches(regexPattern);
+
+        return passwordFeild.trim().matches(regexPattern);
     }
 }

@@ -19,12 +19,14 @@
         </ul>
     </div>
     <form th:action="@{/createGeek}" method="post" th:object="${geek}">
+
         <input th:field="*{firstName}"  placeholder="First Name" >
         <input th:field="*{lastName}"  placeholder="Last Name" >
         <input th:field="*{email}" placeholder="Email" >
         <input th:field="*{password}" placeholder="Password" >
-        <input th:filed="*{passwordConfirm}"  placeholder="Confirm Password" >
-        <button type="submit">Sign Up</button>
+        <input th:field="*{passwordConfirm}"  placeholder="Confirm Password" >
+
+        <button >Sign Up</button>
     </form>
 </div>
 

@@ -5,7 +5,6 @@ import com.chatapp.annotation.PassWorldValidator;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -43,11 +42,11 @@ public class Geek extends BaseEntity
     private String email;
 
     @NotBlank(message = "Password cannot be blank")
+    @PassWorldValidator
     private String password;
 
+
     @NotBlank(message = "Please confirm your password")
-    @PassWorldValidator(message = "Password should 8 min chan consist of atleat 2, numbers, uppercase letter" +
-            ", lowercase letter and special characters")
     @Transient
     private String passwordConfirm;
 
