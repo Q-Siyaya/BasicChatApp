@@ -8,6 +8,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -47,6 +49,13 @@ public class Geek extends BaseEntity
     @NotBlank(message = "Please confirm your password")
     @Transient
     private String passwordConfirm;
+
+
+    @OneToMany(fetch = FetchType.EAGER,
+            cascade = {CascadeType.PERSIST,CascadeType.REFRESH},
+            targetEntity = Message.class)
+    @JoinColumn(name = "message_fk")
+    private List<Message> messages;
 
 
 }

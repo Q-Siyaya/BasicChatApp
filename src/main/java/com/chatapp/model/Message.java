@@ -23,4 +23,14 @@ public class Message extends BaseEntity{
     @Column(insertable = false,columnDefinition = "default 'Not Received'")
     private String msgStatus;
 
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "sender_fk",referencedColumnName = "geekId")
+    private Geek sender;
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "reciever_fk",referencedColumnName = "geekId")
+    private Geek recipient;
+
+
 }
